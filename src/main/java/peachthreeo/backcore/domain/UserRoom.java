@@ -3,21 +3,21 @@ package peachthreeo.backcore.domain;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
-public class EatenFood {
+public class UserRoom {
 
     @Id
     @GeneratedValue
-    @Column(name = "eaten_food_id")
+    @Column(name = "user_room_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_id")
-    private Food food;
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Room room;
 }

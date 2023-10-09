@@ -6,16 +6,16 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-public class EatenFood {
+public class QNA {
 
     @Id
     @GeneratedValue
-    @Column(name = "eaten_food_id")
+    @Column(name = "qna_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_id")
-    private Food food;
+    private QnaType qnaType;
+
+    private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

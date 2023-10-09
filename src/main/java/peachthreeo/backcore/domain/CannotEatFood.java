@@ -6,11 +6,11 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-public class EatenFood {
+public class CannotEatFood {
 
     @Id
     @GeneratedValue
-    @Column(name = "eaten_food_id")
+    @Column(name = "cannot_eat_food_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -2,10 +2,9 @@ package peachthreeo.backcore.domain;
 
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,4 +15,13 @@ public class Food {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "food")
+    private List<EatenFood> eatenFoods = new ArrayList<>();
+
+    @OneToMany(mappedBy = "food")
+    private List<CannotEatFood> cannotEatFoods = new ArrayList<>();
+
+    @OneToMany(mappedBy = "food")
+    private List<BingoGame> bingoGames = new ArrayList<>();
 }

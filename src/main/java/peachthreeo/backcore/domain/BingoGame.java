@@ -6,18 +6,22 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-public class EatenFood {
+public class BingoGame {
 
     @Id
     @GeneratedValue
-    @Column(name = "eaten_food_id")
+    @Column(name = "bingo_game_id")
     private Long id;
+
+    private BingoType bingoType;
+
+    private int round;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_id")
     private Food food;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "room_id")
+    private Room room;
 }
